@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
 
+// components
+import LandingPage from './components/landingpage/LandingPage';
+
+// package
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Helmet } from 'react-helmet';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <Helmet>
+                <title>Skyline Hectares</title>
+                <meta name="description" content="App Description" />
+                <meta name="theme-color" content="#008f68" />
+            </Helmet>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<LandingPage />} />
+                </Routes>
+            </Router>
+        </>
+    );
 }
 
 export default App;
